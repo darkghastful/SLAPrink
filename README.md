@@ -6,11 +6,12 @@
 ## **Installation**
 
 <!-- From CRAN (when published) -->
+
 <!-- install.packages("SLAPrink") -->
 
 ``` r
 # install.packages("devtools")      
-install.packages("darkghastful/SLAPrink")
+install_github("darkghastful/SLAPrink")
 ```
 
 ------------------------------------------------------------------------
@@ -44,9 +45,13 @@ rink.save(blues.note.plot(rink=TRUE), scale=rink.scale("mm", height=85), file.na
 ```
 
 <!-- ### **Choose a team** -->
+
 <!-- ```{r} -->
+
 <!-- NHL.teams()[c(26, 22, 31),]  # Use NHL.teams() for full list -->
+
 <!-- ``` -->
+
 <!-- --- -->
 
 ------------------------------------------------------------------------
@@ -85,7 +90,7 @@ Generates an NHL regulation rink plot with an optional team logo.
 
 #### `rink(team = "UTA", scale = scale)`
 
-<img src="man/figures/README-logo.rink-1.png" width="100%" />
+<img src="man/figures/README-logo.rink-1.png" alt="" width="100%" />
 
 ### `blues.note.plot(rink = FALSE, save = FALSE)`
 
@@ -93,10 +98,10 @@ Calculates the equations for a Blues note logo and optionally overlays
 it on a rink.
 
 - **Arguments**
-  - `rink` — Logical; if `TRUE`, overlays the note on a rink.  
+  - `rink` — Logical; if `TRUE`, overlays the note on a rink.\
   - `scale` - Scale of the desired plot.
   - `save` — Logical; if `TRUE`, saves as `blues.note.plot.rds` or
-    `blues.rink.plot.rds`.  
+    `blues.rink.plot.rds`.\
 - **Returns**
   - A **ggplot** object of the note (and rink if `rink = TRUE`).
 
@@ -104,7 +109,7 @@ it on a rink.
 
 #### `blues.note.plot(rink = TRUE, scale = scale)`
 
-<img src="man/figures/README-blues.note.plot-1.png" width="100%" />
+<img src="man/figures/README-blues.note.plot-1.png" alt="" width="100%" />
 
 ### `rink.save(rink, scale, file.name = "rink.png")`
 
@@ -124,7 +129,7 @@ Wrapper to save a rink as a png
 Queries and prepares a **grob** or **ggplot** of/with a team logo.
 
 - **Arguments**
-  - `team` — Team name, tri-code, or ID (e.g. `"SEA"`).  
+  - `team` — Team name, tri-code, or ID (e.g. `"SEA"`).\
 - **Returns**
   - A **grob** or **ggplot**.
 
@@ -138,14 +143,14 @@ Queries and prepares a **grob** or **ggplot** of/with a team logo.
 
 ## **Dependencies**
 
-- **bqutils**  
-- **ggplot2** ≥ 3.5.2  
-- **ggforce**  
-- **rsvg**  
-- **magick**  
-- **grid**  
-- **stringr**  
-- **magrittr**  
+- **bqutils**\
+- **ggplot2** ≥ 3.5.2\
+- **ggforce**\
+- **rsvg**\
+- **magick**\
+- **grid**\
+- **stringr**\
+- **magrittr**\
 - **scales**
 
 ------------------------------------------------------------------------

@@ -17,17 +17,38 @@ rink.logo <- function(team){
   if(nrow(logo)>1){
     logo <- logo[nrow(logo), ]
   }
-  logo <- rsvg::rsvg_raw(logo[,"lightLogo"])
+
+  logo <- rsvg::rsvg_raw(logo[, "lightLogo"])
   logo <- magick::image_read(logo)
-  # logo <- magick::image_fx(logo, expression="a*0.9", channel="alpha")
+  logo <- magick::image_trim(logo)
   raster <- grDevices::as.raster(logo)
-  grob <- grid::rasterGrob(raster, width=grid::unit(1, "snpc"), height=grid::unit(1, "snpc"), just="centre", interpolate=TRUE)
+
+  aspect <- ncol(raster) / nrow(raster)
+
+  grob <- grid::rasterGrob(
+    raster,
+    width = grid::unit(1, "npc"),
+    height = grid::unit(1, "npc"),
+    just = "centre",
+    interpolate = TRUE
+  )
+
   logo.size <- 13
+  width <- as.numeric(magick::image_info(logo)[,"width"])
+  height <- as.numeric(magick::image_info(logo)[,"height"])
+
+  if(height>width){
+    width <- 13*(width/height)
+    height <- 13
+  }else{
+    height <- 13*(height/width)
+    width <- 13
+  }
 
   team.logo <- ggplot2::ggplot() +
     ggplot2::theme_void() +
-    ggplot2::coord_fixed(xlim=c(-logo.size, logo.size), ylim=c(-logo.size, logo.size), expand=FALSE) +
-    ggplot2::annotation_custom(ymin=-logo.size, ymax=logo.size, xmin=-logo.size, xmax=logo.size, grob=grob) +
+    ggplot2::coord_fixed(xlim=c(-width, width), ylim=c(-height, height), expand=FALSE) +
+    ggplot2::annotation_custom(ymin=-height, ymax=height, xmin=-width, xmax=width, grob=grob) +
     theme(panel.background=ggplot2::element_rect(fill="transparent", color=NA),
           plot.background=ggplot2::element_rect(fill="transparent", color=NA))
   return(team.logo)

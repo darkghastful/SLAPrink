@@ -11,7 +11,7 @@
 #'
 #' @examples
 #' rink.save(rink("UTA"), scale=rink.scale("in", height=3), file.name="mammoth.rink.png")
-#' rink.save(blues.note.plot(rink=TRUE), scale=1, file.name="blues.rink.png)
+#' rink.save(blues.note.plot(rink=TRUE), scale=1, file.name="blues.rink.png")
 rink.save <- function(rink, scale, file.name="rink.png"){
   res <- try(scale$scale, silent=TRUE)
 

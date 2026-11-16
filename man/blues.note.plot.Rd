@@ -4,7 +4,7 @@
 \alias{blues.note.plot}
 \title{Blues note plot}
 \usage{
-blues.note.plot(rink = FALSE, scale = NA, save = FALSE)
+blues.note.plot(rink = FALSE, scale = 1, save = FALSE)
 }
 \arguments{
 \item{rink}{boolean switch referencing the inclusion of the blues note in a rink plot (default is FALSE)}

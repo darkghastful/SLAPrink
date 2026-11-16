@@ -11,11 +11,15 @@ rink.save(rink, scale, file.name = "rink.png")
 
 \item{scale}{for plot generation}
 
-\item{filename}{name of output file (default is rink.png)}
+\item{file.name}{name of output file (default is rink.png)}
 }
 \value{
 nothing
 }
 \description{
 Wrapper to save a rink as a png
+}
+\examples{
+rink.save(rink("UTA"), scale=rink.scale("in", height=3), file.name="mammoth.rink.png")
+rink.save(blues.note.plot(rink=TRUE), scale=1, file.name="blues.rink.png")
 }

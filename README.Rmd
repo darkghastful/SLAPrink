@@ -22,9 +22,9 @@ knitr::opts_chunk$set(
 <!-- From CRAN (when published) -->
 <!-- install.packages("SLAPrink") -->
 
-```{r, results = "hide", warning = FALSE, message = FALSE}
+```{r, results = "hide", warning = FALSE, message = FALSE, eval=FALSE}
 # install.packages("devtools")      
-install.packages("darkghastful/SLAPrink")
+install_github("darkghastful/SLAPrink")
 ```
 
 ---
